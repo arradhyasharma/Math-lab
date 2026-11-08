@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore angle relationships and the properties of triangles and quadrilaterals through small mathematical experiments.">
+<title>Geometry laboratory — MathLab</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../pages.css">
+<script src="../script.js" defer></script>
+<script src="../js/geometry.js" defer></script>
+</head>
+<body>
+<header class="masthead">
+  <a href="../index.html" class="brand">MATHLAB<span>®</span></a>
+  <div class="masthead-caption">AN OPEN WORKSHOP FOR MATHEMATICAL EXPLORATION</div>
+  <button id="theme-toggle" class="theme-toggle" type="button">Dark mode</button>
+</header>
+<nav class="navigation">
+  <span class="nav-label">INDEX /</span>
+  <a href="../index.html#experiments">Experiments</a>
+  <a href="../index.html#laboratories">Laboratories</a>
+  <a href="challenges.html">Challenges</a>
+  <a href="formulas.html">Formula register</a>
+  <span class="edition">EDITION 002 — 2026</span>
+</nav>
+<main class="page-main">
+  <div class="page-topline"><span>LABORATORY 02 / GEOMETRY</span><span>MATHLAB / FIELD NOTES</span></div>
+  <section class="page-intro"><h1>Geometry laboratory</h1><p>Explore angle relationships and the properties of triangles and quadrilaterals through small mathematical experiments.</p></section>
+  
+<section class="workspace">
+<h2>Investigation 01 / Triangle angle sum</h2>
+<p>Change two interior angles. The third angle is determined by the angle-sum property of a triangle.</p>
+<div class="control-row">
+ <div class="field"><label for="angle-a">ANGLE A (°)</label><input id="angle-a" type="number" value="55" min="1" max="178"></div>
+ <div class="field"><label for="angle-b">ANGLE B (°)</label><input id="angle-b" type="number" value="65" min="1" max="178"></div>
+ <button class="action-button" id="triangle-calculate">Calculate third angle ↗</button>
+</div>
+<div class="output" id="triangle-output" aria-live="polite">The third angle is 60°.</div>
+</section>
+<section class="workspace">
+<h2>Investigation 02 / Quadrilateral angle sum</h2>
+<p>The interior angles of a quadrilateral add up to 360°.</p>
+<div class="control-row">
+ <div class="field"><label for="quad-a">ANGLE A (°)</label><input id="quad-a" type="number" value="90"></div>
+ <div class="field"><label for="quad-b">ANGLE B (°)</label><input id="quad-b" type="number" value="90"></div>
+ <div class="field"><label for="quad-c">ANGLE C (°)</label><input id="quad-c" type="number" value="90"></div>
+ <button class="action-button" id="quad-calculate">Find fourth angle ↗</button>
+</div>
+<div class="output" id="quad-output" aria-live="polite">The fourth angle is 90°.</div>
+</section>
+<section class="workspace">
+<h2>Investigation 03 / Pythagorean theorem</h2>
+<p>For a right-angled triangle, c² = a² + b². Explore how the hypotenuse changes with the two shorter sides.</p>
+<div class="control-row">
+ <div class="field"><label for="side-a">SIDE a</label><input id="side-a" type="number" value="3" min="0.1" step="any"></div>
+ <div class="field"><label for="side-b">SIDE b</label><input id="side-b" type="number" value="4" min="0.1" step="any"></div>
+ <button class="action-button" id="pythagoras-calculate">Calculate hypotenuse ↗</button>
+</div>
+<div class="output" id="pythagoras-output" aria-live="polite">Hypotenuse = 5 units.</div>
+</section>
+<section class="workspace">
+<h2>Investigation 04 / Triangle measurements</h2>
+<p>Find a triangle's perimeter and area. Compare the base-height method with Heron's formula when all three sides are known.</p>
+<div class="control-row">
+ <div class="field"><label for="tri-base">BASE</label><input id="tri-base" type="number" min="0.1" step="any" value="8"></div>
+ <div class="field"><label for="tri-height">HEIGHT</label><input id="tri-height" type="number" min="0.1" step="any" value="5"></div>
+ <div class="field"><label for="tri-side-a">SIDE A</label><input id="tri-side-a" type="number" min="0.1" step="any" value="5"></div>
+ <div class="field"><label for="tri-side-b">SIDE B</label><input id="tri-side-b" type="number" min="0.1" step="any" value="6"></div>
+ <div class="field"><label for="tri-side-c">SIDE C</label><input id="tri-side-c" type="number" min="0.1" step="any" value="7"></div>
+ <button class="action-button" id="triangle-measure">Calculate ↗</button>
+</div><div class="output" id="triangle-measure-output" aria-live="polite">Area by base-height = 20 square units. Heron's formula uses the three side lengths.</div><div class="note">Use measurements from the same triangle if you want to compare both area methods. The base-height method uses the first two fields; Heron's formula uses the three side lengths.</div>
+</section>
+<section class="workspace">
+<h2>Investigation 05 / Quadrilateral area and perimeter</h2>
+<p>Select a shape and change its dimensions. The experiment calculates area and perimeter, with a short explanation.</p>
+<div class="control-row"><div class="field"><label for="shape-type">SHAPE</label><select id="shape-type"><option value="square">Square</option><option value="rectangle">Rectangle</option><option value="rhombus">Rhombus</option><option value="parallelogram">Parallelogram</option><option value="trapezium">Trapezium</option></select></div>
+<div class="field"><label for="shape-a">SIDE / BASE a</label><input id="shape-a" type="number" value="8" min="0.1" step="any"></div>
+<div class="field"><label for="shape-b">SIDE / BASE b</label><input id="shape-b" type="number" value="5" min="0.1" step="any"></div>
+<div class="field"><label for="shape-height">HEIGHT</label><input id="shape-height" type="number" value="4" min="0.1" step="any"></div>
+<div class="field"><label for="shape-side-c">SIDE c (TRAPEZIUM)</label><input id="shape-side-c" type="number" value="4" min="0.1" step="any"></div>
+<div class="field"><label for="shape-side-d">SIDE d (TRAPEZIUM)</label><input id="shape-side-d" type="number" value="5" min="0.1" step="any"></div>
+<button class="action-button" id="shape-calculate">Calculate ↗</button></div>
+<div class="output" id="shape-output" aria-live="polite">Square: area = side²; perimeter = 4 × side.</div>
+<div class="note">For a rhombus, use the side length and perpendicular height for area. For a trapezium, a and b are the parallel sides; height is perpendicular distance between them. Perimeter uses all four side lengths.</div>
+</section>
+  <a class="back-link" href="../index.html#laboratories">← BACK TO THE LABORATORY INDEX</a>
+</main>
+<footer class="page-footer"><strong>MATHLAB®</strong><span>MADE BY ARRADHYA SHARMA</span><span>END OF EDITION 002</span></footer>
+</body>
+</html>

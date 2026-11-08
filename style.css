@@ -1,0 +1,936 @@
+
+:root {
+    color-scheme: light;
+
+    --paper: #F1EDE2;
+    --paper-light: #F8F6EF;
+    --ink: #252720;
+    --muted: #77776D;
+    --line: #D4D0C4;
+    --accent: #C45A3C;
+    --olive: #78816A;
+    --grid: #DDD9CE;
+
+    --font: Arial, Helvetica, sans-serif;
+    --page-width: 1320px;
+    --gutter: 7%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px;
+}
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+::selection {
+    background: var(--accent);
+    color: #FFFFFF;
+}
+
+
+/* ==========================================
+   PAGE WIDTH AND COMMON ELEMENTS
+   ========================================== */
+
+.masthead,
+.navigation,
+main,
+.footer {
+    width: 100%;
+}
+
+main {
+    max-width: var(--page-width);
+    margin: auto;
+}
+
+.opening,
+.experiment-section,
+.laboratories,
+.challenge-section,
+.formula-section {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+}
+
+.section-index {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+/* ==========================================
+   MASTHEAD
+   ========================================== */
+
+.masthead {
+    min-height: 83px;
+    padding: 0 var(--gutter);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    border-bottom: 1px solid var(--ink);
+}
+
+.brand {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -1.8px;
+}
+
+.brand span {
+    color: var(--accent);
+    font-size: 11px;
+    vertical-align: top;
+    margin-left: 3px;
+}
+
+.masthead-caption {
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.theme-toggle {
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink);
+
+    padding: 9px 13px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+
+    transition: background 0.2s, color 0.2s;
+}
+
+.theme-toggle:hover {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+
+/* ==========================================
+   NAVIGATION
+   ========================================== */
+
+.navigation {
+    min-height: 49px;
+    padding: 0 var(--gutter);
+
+    display: flex;
+    align-items: center;
+    gap: 27px;
+
+    border-bottom: 1px solid var(--line);
+    overflow-x: auto;
+}
+
+.nav-label,
+.edition {
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    white-space: nowrap;
+}
+
+.navigation a {
+    color: var(--muted);
+    font-size: 11px;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.navigation a:hover {
+    color: var(--accent);
+}
+
+.edition {
+    margin-left: auto;
+}
+
+
+/* ==========================================
+   OPENING / INTRODUCTION
+   ========================================== */
+
+.opening {
+    padding-top: 95px;
+    padding-bottom: 75px;
+}
+
+.opening-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.opening h1 {
+    margin-top: 52px;
+    margin-bottom: 38px;
+
+    font-size: clamp(55px, 8.3vw, 112px);
+    line-height: 0.98;
+    letter-spacing: -7px;
+    font-weight: 800;
+}
+
+.opening h1 em {
+    color: var(--accent);
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    letter-spacing: -5px;
+}
+
+.opening-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 35px;
+
+    padding-top: 23px;
+    border-top: 1px solid var(--ink);
+}
+
+.opening-bottom p {
+    max-width: 440px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.text-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--accent);
+
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+
+    white-space: nowrap;
+    transition: gap 0.2s;
+}
+
+.text-action:hover {
+    gap: 27px;
+}
+
+
+/* ==========================================
+   EXPERIMENT SECTION
+   ========================================== */
+
+.experiment-section {
+    padding-top: 65px;
+    padding-bottom: 85px;
+
+    background: var(--paper-light);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.experiment-heading {
+    display: grid;
+    grid-template-columns: 1fr 0.65fr;
+    align-items: end;
+    gap: 40px;
+
+    padding-top: 38px;
+    padding-bottom: 35px;
+}
+
+.small-label {
+    margin-bottom: 13px;
+
+    color: var(--accent);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.experiment-heading h2,
+.section-title-row h2 {
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.experiment-description {
+    max-width: 360px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+/* ==========================================
+   GRAPH WORKSPACE
+   ========================================== */
+
+.experiment-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 0.65fr;
+    border: 1px solid var(--line);
+}
+
+.graph-area {
+    min-width: 0;
+    padding: 20px;
+    border-right: 1px solid var(--line);
+}
+
+.graph-area svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.graph-axis {
+    stroke: var(--ink);
+    stroke-width: 1.5;
+}
+
+.axis-arrow {
+    fill: var(--ink);
+}
+
+.axis-label {
+    fill: var(--ink);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.graph-numbers {
+    fill: var(--muted);
+    font-size: 10px;
+}
+
+.point-guide {
+    stroke: var(--olive);
+    stroke-width: 1.4;
+    stroke-dasharray: 4 4;
+}
+
+.plotted-point {
+    fill: var(--accent);
+    stroke: var(--paper-light);
+    stroke-width: 2;
+}
+
+.point-label {
+    fill: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.graph-caption {
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+
+/* ==========================================
+   EXPERIMENT CONTROLS
+   ========================================== */
+
+.experiment-controls {
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.experiment-controls h3 {
+    margin-bottom: 8px;
+    font-size: 22px;
+    letter-spacing: -0.8px;
+}
+
+.control-description {
+    margin-bottom: 28px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.experiment-controls label {
+    margin-bottom: 7px;
+
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.experiment-controls input {
+    width: 100%;
+    height: 43px;
+    margin-bottom: 20px;
+    padding: 0 12px;
+
+    background: transparent;
+    color: var(--ink);
+
+    border: 1px solid var(--line);
+    border-radius: 0;
+    outline: none;
+
+    font-size: 15px;
+}
+
+.experiment-controls input:focus {
+    border-color: var(--accent);
+}
+
+.plot-button {
+    min-height: 44px;
+    border: 0;
+    padding: 10px 14px;
+
+    background: var(--ink);
+    color: var(--paper);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+
+    transition: background 0.2s;
+}
+
+.plot-button:hover {
+    background: var(--accent);
+}
+
+.result-area {
+    margin-top: 25px;
+    padding-top: 17px;
+    border-top: 1px solid var(--line);
+}
+
+.result-area span {
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.result-area p {
+    margin-top: 7px;
+    color: var(--accent);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   LABORATORY INDEX
+   ========================================== */
+
+.laboratories {
+    padding-top: 90px;
+    padding-bottom: 100px;
+}
+
+.section-title-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.section-title-row p {
+    max-width: 240px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.lab-list {
+    border-top: 1px solid var(--ink);
+}
+
+.lab-entry {
+    min-height: 94px;
+    display: grid;
+    grid-template-columns: 65px 1.1fr 1fr 35px;
+    align-items: center;
+    gap: 20px;
+
+    border-bottom: 1px solid var(--line);
+    transition: padding 0.2s, background 0.2s;
+}
+
+.lab-entry:hover {
+    padding-left: 12px;
+    padding-right: 12px;
+    background: var(--paper-light);
+}
+
+.lab-id {
+    color: var(--accent);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+}
+
+.lab-name {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+}
+
+.lab-detail {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.lab-arrow {
+    color: var(--accent);
+    font-size: 21px;
+    text-align: right;
+}
+
+
+/* ==========================================
+   CHALLENGE SECTION
+   ========================================== */
+
+.challenge-section {
+    padding-top: 65px;
+    padding-bottom: 85px;
+
+    background: var(--ink);
+    color: var(--paper);
+}
+
+.challenge-section .section-index {
+    border-color: #55564E;
+    color: #B8B8A9;
+}
+
+.challenge-content {
+    padding-top: 55px;
+}
+
+.challenge-content h2 {
+    font-size: clamp(43px, 6vw, 75px);
+    line-height: 1.03;
+    letter-spacing: -4px;
+}
+
+.challenge-content p {
+    max-width: 390px;
+    margin-top: 23px;
+    margin-bottom: 30px;
+
+    color: #B8B8A9;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.challenge-section .text-action {
+    color: #D78A6F;
+    border-color: #D78A6F;
+}
+
+
+/* ==========================================
+   FORMULA REGISTER
+   ========================================== */
+
+.formula-section {
+    padding-top: 75px;
+    padding-bottom: 90px;
+}
+
+.formula-content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding-top: 45px;
+}
+
+.formula-content h2 {
+    font-size: clamp(34px, 4vw, 49px);
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.formula-content p {
+    max-width: 390px;
+    margin-top: 16px;
+
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.footer {
+    min-height: 150px;
+    padding: 30px var(--gutter);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 14px;
+
+    background: var(--ink);
+    color: var(--paper);
+}
+
+.footer-brand {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+}
+
+.footer p,
+.footer > span {
+    color: #B8B8A9;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.footer p:nth-of-type(2),
+.footer > span {
+    text-align: right;
+}
+
+
+/* ==========================================
+   DARK THEME
+   ========================================== */
+
+body.dark-theme {
+    color-scheme: dark;
+
+    --paper: #20211D;
+    --paper-light: #292A24;
+    --ink: #E9E5D9;
+    --muted: #AAA99C;
+    --line: #494A40;
+    --accent: #DC8060;
+    --olive: #A5AD8B;
+    --grid: #42443B;
+}
+
+body.dark-theme .footer {
+    background: #151611;
+}
+
+body.dark-theme .challenge-section {
+    background: #151611;
+}
+
+body.dark-theme .experiment-controls input {
+    background: #20211D;
+}
+
+body.dark-theme .graph-area svg rect {
+    fill: url(#minor-grid);
+}
+
+body.dark-theme .graph-area svg pattern path {
+    stroke: var(--line);
+}
+
+body.dark-theme .plotted-point {
+    stroke: var(--paper-light);
+}
+
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    :root {
+        --gutter: 5%;
+    }
+
+    .masthead-caption {
+        font-size: 8px;
+    }
+
+    .navigation {
+        gap: 19px;
+    }
+
+    .opening h1 {
+        letter-spacing: -4px;
+    }
+
+    .experiment-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .graph-area {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .experiment-controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 18px;
+    }
+
+    .experiment-controls .small-label,
+    .experiment-controls h3,
+    .experiment-controls .control-description,
+    .experiment-controls .plot-button,
+    .experiment-controls .result-area {
+        grid-column: 1 / -1;
+    }
+
+    .experiment-controls input {
+        margin-bottom: 5px;
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    :root {
+        --gutter: 6%;
+    }
+
+    .masthead {
+        min-height: 72px;
+        gap: 10px;
+    }
+
+    .brand {
+        font-size: 22px;
+    }
+
+    .masthead-caption {
+        display: none;
+    }
+
+    .theme-toggle {
+        padding: 8px 9px;
+        font-size: 10px;
+    }
+
+    .navigation {
+        min-height: 45px;
+        gap: 17px;
+    }
+
+    .edition {
+        display: none;
+    }
+
+    .opening {
+        padding-top: 65px;
+        padding-bottom: 55px;
+    }
+
+    .opening-meta {
+        font-size: 8px;
+        letter-spacing: 0.7px;
+    }
+
+    .opening h1 {
+        margin-top: 40px;
+        margin-bottom: 30px;
+        font-size: clamp(47px, 12vw, 68px);
+        letter-spacing: -3px;
+    }
+
+    .opening h1 em {
+        letter-spacing: -2px;
+    }
+
+    .opening-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .opening-bottom p {
+        font-size: 13px;
+    }
+
+    .experiment-section {
+        padding-top: 45px;
+        padding-bottom: 55px;
+    }
+
+    .section-index {
+        font-size: 8px;
+        letter-spacing: 0.8px;
+    }
+
+    .experiment-heading {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding-top: 28px;
+    }
+
+    .experiment-heading h2,
+    .section-title-row h2 {
+        font-size: 35px;
+    }
+
+    .graph-area {
+        padding: 9px;
+    }
+
+    .experiment-controls {
+        padding: 22px 17px;
+        display: flex;
+    }
+
+    .experiment-controls input {
+        margin-bottom: 15px;
+    }
+
+    .laboratories {
+        padding-top: 60px;
+        padding-bottom: 65px;
+    }
+
+    .section-title-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        padding-top: 27px;
+        padding-bottom: 27px;
+    }
+
+    .lab-entry {
+        min-height: 88px;
+        grid-template-columns: 29px 1fr 22px;
+        gap: 10px;
+    }
+
+    .lab-name {
+        font-size: 16px;
+    }
+
+    .lab-detail {
+        display: none;
+    }
+
+    .challenge-section {
+        padding-top: 45px;
+        padding-bottom: 60px;
+    }
+
+    .challenge-content {
+        padding-top: 40px;
+    }
+
+    .challenge-content h2 {
+        font-size: 49px;
+        letter-spacing: -2.5px;
+    }
+
+    .formula-section {
+        padding-top: 55px;
+        padding-bottom: 65px;
+    }
+
+    .formula-content {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-top: 32px;
+    }
+
+    .formula-content h2 {
+        font-size: 37px;
+    }
+
+    .footer {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .footer p:nth-of-type(2),
+    .footer > span {
+        text-align: left;
+    }
+}
+
+
+/* ACCESSIBILITY AND INTERACTION STATES */
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+[hidden] { display: none !important; }

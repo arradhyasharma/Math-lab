@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Investigate variables, constants, expressions and linear equations by changing values and observing what happens.">
+<title>Algebra laboratory — MathLab</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../pages.css">
+<script src="../script.js" defer></script>
+<script src="../js/algebra.js" defer></script>
+</head>
+<body>
+<header class="masthead">
+  <a href="../index.html" class="brand">MATHLAB<span>®</span></a>
+  <div class="masthead-caption">AN OPEN WORKSHOP FOR MATHEMATICAL EXPLORATION</div>
+  <button id="theme-toggle" class="theme-toggle" type="button">Dark mode</button>
+</header>
+<nav class="navigation">
+  <span class="nav-label">INDEX /</span>
+  <a href="../index.html#experiments">Experiments</a>
+  <a href="../index.html#laboratories">Laboratories</a>
+  <a href="challenges.html">Challenges</a>
+  <a href="formulas.html">Formula register</a>
+  <span class="edition">EDITION 002 — 2026</span>
+</nav>
+<main class="page-main">
+  <div class="page-topline"><span>LABORATORY 01 / ALGEBRA</span><span>MATHLAB / FIELD NOTES</span></div>
+  <section class="page-intro"><h1>Algebra laboratory</h1><p>Investigate variables, constants, expressions and linear equations by changing values and observing what happens.</p></section>
+  
+<section class="workspace">
+<h2>Investigation 01 / Solve a linear equation</h2>
+<p>Explore an equation in the form <strong>ax + b = c</strong>. The solver shows the inverse operations used to isolate x.</p>
+<div class="control-row">
+ <div class="field"><label for="a">COEFFICIENT (a)</label><input id="a" type="number" value="3"></div>
+ <div class="field"><label for="b">CONSTANT (b)</label><input id="b" type="number" value="5"></div>
+ <div class="field"><label for="c">RIGHT SIDE (c)</label><input id="c" type="number" value="20"></div>
+ <button class="action-button" id="solve-equation">Solve equation ↗</button>
+</div>
+<div class="output" id="equation-output" aria-live="polite">Your solution will appear here.</div>
+<div class="note">Try changing one number at a time. Notice how the value of x changes. If a = 0, the equation may have no solution or infinitely many solutions.</div>
+</section>
+<section class="workspace">
+<h2>Investigation 02 / Evaluate an expression</h2>
+<p>Substitute a value for the variable and calculate the result.</p>
+<div class="control-row">
+ <div class="field"><label for="expression">EXPRESSION (use x)</label><input id="expression" value="2*x + 7" autocomplete="off"></div>
+ <div class="field"><label for="variable-value">VALUE OF x</label><input id="variable-value" type="number" value="4"></div>
+ <button class="action-button" id="evaluate-expression">Evaluate ↗</button>
+</div>
+<div class="output" id="expression-output" aria-live="polite">Enter an expression using x, numbers and basic operations.</div>
+<div class="note">For safety, this calculator accepts only basic arithmetic, brackets, decimals and the variable x. It does not execute JavaScript.</div>
+</section>
+<section class="workspace">
+<h2>Investigation 03 / Equation with x on both sides</h2>
+<p>Solve equations in the form ax + b = cx + d. MathLab shows how to collect variable terms and constants.</p>
+<div class="control-row"><div class="field"><label for="eq-a">LEFT COEFFICIENT a</label><input id="eq-a" type="number" value="5"></div><div class="field"><label for="eq-b">LEFT CONSTANT b</label><input id="eq-b" type="number" value="3"></div><div class="field"><label for="eq-c">RIGHT COEFFICIENT c</label><input id="eq-c" type="number" value="2"></div><div class="field"><label for="eq-d">RIGHT CONSTANT d</label><input id="eq-d" type="number" value="18"></div><button class="action-button" id="solve-both-sides">Solve step by step ↗</button></div><div class="output" id="both-sides-output" aria-live="polite">Steps will appear here.</div>
+</section>
+<section class="workspace">
+<h2>Investigation 04 / Polynomial explorer</h2>
+<p>Enter polynomials using terms such as 3x^2 + 2x − 5. Add or subtract two polynomials, and identify degree, coefficients and constant term.</p>
+<div class="control-row"><div class="field"><label for="poly-one">POLYNOMIAL A</label><input id="poly-one" value="3x^2 + 2x - 5"></div><div class="field"><label for="poly-two">POLYNOMIAL B</label><input id="poly-two" value="x^2 - 4x + 7"></div><div class="field"><label for="poly-operation">OPERATION</label><select id="poly-operation"><option value="add">Add A + B</option><option value="subtract">Subtract A − B</option></select></div><button class="action-button" id="poly-calculate">Calculate ↗</button></div><div class="output" id="poly-output" aria-live="polite">Polynomial result and like-term collection will appear here.</div>
+<div class="note">This first polynomial tool supports one variable x and whole-number powers from 0 to 8. It combines like terms; it is not a general symbolic algebra system.</div>
+</section>
+  <a class="back-link" href="../index.html#laboratories">← BACK TO THE LABORATORY INDEX</a>
+</main>
+<footer class="page-footer"><strong>MATHLAB®</strong><span>MADE BY ARRADHYA SHARMA</span><span>END OF EDITION 002</span></footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Work with data and discover how mean, median and mode describe a collection of observations.">
+<title>Statistics laboratory — MathLab</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../pages.css">
+<script src="../script.js" defer></script>
+<script src="../js/statistics.js" defer></script>
+</head>
+<body>
+<header class="masthead">
+  <a href="../index.html" class="brand">MATHLAB<span>®</span></a>
+  <div class="masthead-caption">AN OPEN WORKSHOP FOR MATHEMATICAL EXPLORATION</div>
+  <button id="theme-toggle" class="theme-toggle" type="button">Dark mode</button>
+</header>
+<nav class="navigation">
+  <span class="nav-label">INDEX /</span>
+  <a href="../index.html#experiments">Experiments</a>
+  <a href="../index.html#laboratories">Laboratories</a>
+  <a href="challenges.html">Challenges</a>
+  <a href="formulas.html">Formula register</a>
+  <span class="edition">EDITION 002 — 2026</span>
+</nav>
+<main class="page-main">
+  <div class="page-topline"><span>LABORATORY 04 / STATISTICS</span><span>MATHLAB / FIELD NOTES</span></div>
+  <section class="page-intro"><h1>Statistics laboratory</h1><p>Work with data and discover how mean, median and mode describe a collection of observations.</p></section>
+  
+<section class="workspace">
+<h2>Investigation 01 / Describe a data set</h2>
+<p>Enter numbers separated by commas or spaces. MathLab calculates the mean, median and mode.</p>
+<div class="field" style="margin-top:18px"><label for="dataset">YOUR DATA</label><textarea id="dataset">4, 6, 6, 8, 10, 12</textarea></div>
+<div class="control-row"><button class="action-button" id="analyse-data">Analyse data ↗</button><button class="action-button secondary-button" id="sample-data">Load sample</button></div>
+<div class="metric-grid">
+ <div class="metric"><strong id="mean-result">—</strong><span>Mean</span></div>
+ <div class="metric"><strong id="median-result">—</strong><span>Median</span></div>
+ <div class="metric"><strong id="mode-result">—</strong><span>Mode</span></div>
+</div>
+<div class="output" id="stats-output" aria-live="polite">Enter your data and select Analyse data.</div><div class="output" id="stats-steps" aria-live="polite">Worked steps will appear here.</div>
+<div class="note">Mean = sum of values ÷ number of values. Median is the middle value after sorting. Mode is the value that occurs most often; a data set may have more than one mode or no mode.</div>
+</section>
+  <a class="back-link" href="../index.html#laboratories">← BACK TO THE LABORATORY INDEX</a>
+</main>
+<footer class="page-footer"><strong>MATHLAB®</strong><span>MADE BY ARRADHYA SHARMA</span><span>END OF EDITION 002</span></footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+/* MATHLAB — LABORATORY PAGE SYSTEM */
+.page-main { max-width: 1320px; margin: 0 auto; padding: 55px 7% 90px; }
+.page-topline { display:flex; justify-content:space-between; gap:16px; color:var(--muted); font-size:10px; font-weight:700; letter-spacing:1.3px; border-bottom:1px solid var(--line); padding-bottom:13px; }
+.page-intro { padding:48px 0 36px; }
+.page-intro h1 { font-size:clamp(42px,7vw,76px); line-height:1; letter-spacing:-4px; margin:12px 0 18px; }
+.page-intro h1 em { color:var(--accent); font-family:Georgia,serif; font-weight:400; }
+.page-intro p { max-width:650px; color:var(--muted); line-height:1.85; font-size:14px; }
+.workspace { background:var(--paper-light); border:1px solid var(--line); padding:28px; margin:20px 0 30px; }
+.workspace h2 { font-size:23px; letter-spacing:-.8px; margin-bottom:10px; }
+.workspace p { color:var(--muted); font-size:13px; line-height:1.8; }
+.control-row { display:flex; flex-wrap:wrap; align-items:end; gap:14px; margin-top:20px; }
+.field { display:flex; flex-direction:column; gap:7px; min-width:120px; flex:1; }
+.field label { color:var(--muted); font-size:10px; font-weight:800; letter-spacing:1px; }
+.field input,.field select,.field textarea,.search-box { width:100%; min-height:43px; padding:10px 12px; color:var(--ink); background:var(--paper); border:1px solid var(--line); border-radius:0; font:inherit; }
+.field textarea { min-height:90px; resize:vertical; }
+.action-button { min-height:43px; padding:10px 17px; background:var(--ink); color:var(--paper); border:0; font-size:11px; font-weight:800; letter-spacing:.5px; }
+.action-button:hover { background:var(--accent); }
+.secondary-button { background:transparent; color:var(--ink); border:1px solid var(--line); }
+.output { margin-top:20px; padding:17px; border-top:1px solid var(--line); color:var(--accent); font-weight:700; line-height:1.7; }
+.output small { display:block; color:var(--muted); font-weight:500; }
+.note { margin-top:12px; padding:12px 15px; border-left:2px solid var(--olive); color:var(--muted); font-size:12px; line-height:1.8; }
+.two-column { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.data-list { margin-top:16px; display:flex; flex-wrap:wrap; gap:8px; }
+.data-chip { padding:7px 10px; background:var(--paper); border:1px solid var(--line); font-size:12px; }
+.metric-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px; }
+.metric { padding:16px; background:var(--paper); border:1px solid var(--line); }
+.metric strong { display:block; color:var(--accent); font-size:25px; }
+.metric span { color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:1px; }
+.question-card { padding:20px 0; border-bottom:1px solid var(--line); }
+.question-card h3 { font-size:16px; margin-bottom:12px; }
+.option-list { display:grid; gap:8px; }
+.option { display:flex; gap:9px; align-items:flex-start; padding:10px 12px; border:1px solid var(--line); cursor:pointer; font-size:13px; }
+.option:hover { border-color:var(--accent); }
+.formula-list { display:grid; gap:12px; margin-top:20px; }
+.formula-card { padding:18px; border:1px solid var(--line); background:var(--paper-light); }
+.formula-card h3 { font-size:15px; margin-bottom:8px; }
+.formula-expression { color:var(--accent); font-family:Georgia,serif; font-size:21px; margin:8px 0; }
+.formula-card p { color:var(--muted); font-size:12px; line-height:1.7; }
+.back-link { display:inline-block; color:var(--accent); font-size:11px; font-weight:800; letter-spacing:.7px; margin-top:22px; border-bottom:1px solid var(--accent); padding-bottom:5px; }
+.page-footer { padding:28px 7%; background:var(--ink); color:var(--paper); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:9px; font-weight:700; letter-spacing:1px; }
+@media(max-width:700px) {
+ .page-main { padding:38px 6% 65px; }
+ .page-intro { padding:35px 0 25px; }
+ .page-intro h1 { letter-spacing:-2.5px; }
+ .workspace { padding:19px; }
+ .two-column { grid-template-columns:1fr; }
+ .metric-grid { grid-template-columns:1fr; }
+ .page-topline { font-size:8px; }
+}
+
+.topic-picker{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:15px 0}.topic-picker label{display:flex;align-items:center;gap:8px;padding:10px;border:1px solid var(--line);font-size:13px;cursor:pointer}.topic-picker input{accent-color:var(--accent)}
+.workspace input,.workspace select,.workspace textarea{max-width:100%}.workspace .field{min-width:130px;flex:1}.workspace .control-row{align-items:end}.workspace .metric-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.workspace .output small{margin:5px 0;line-height:1.65}
+@media(max-width:700px){.workspace .metric-grid{grid-template-columns:1fr}.topic-picker{grid-template-columns:1fr 1fr}}

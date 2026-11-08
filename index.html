@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="MathLab is a hands-on workshop for exploring mathematics through experiments and visual learning.">
+
+    <title>MathLab — The Mathematics Workshop</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="masthead">
+        <a href="index.html" class="brand">
+            MATHLAB<span>®</span>
+        </a>
+
+        <div class="masthead-caption">
+            AN OPEN WORKSHOP FOR MATHEMATICAL EXPLORATION
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle" type="button">
+            Switch to dark
+        </button>
+    </header>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="navigation">
+        <span class="nav-label">INDEX /</span>
+
+        <a href="#experiments">Experiments</a>
+        <a href="#laboratories">Laboratories</a>
+        <a href="#challenges">Challenges</a>
+        <a href="#formulas">Formula register</a>
+
+        <span class="edition">EDITION 002 — 2026</span>
+    </nav>
+
+
+    <main>
+
+        <!-- INTRODUCTION -->
+
+        <section class="opening" id="home">
+
+            <div class="opening-meta">
+                <span>MATHEMATICS / LEARNING / DISCOVERY</span>
+                <span>01 — INTRODUCTION</span>
+            </div>
+
+            <h1>
+                Don't just<br>
+                <em>learn</em> mathematics.<br>
+                Investigate it.
+            </h1>
+
+            <div class="opening-bottom">
+                <p>
+                    MathLab is a digital workshop where mathematical
+                    ideas can be tested, explored and understood.
+                    Start with a question. Experiment with the answer.
+                </p>
+
+                <a href="#experiments" class="text-action">
+                    BEGIN EXPLORING <span>↘</span>
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- MAIN EXPERIMENT -->
+
+        <section class="experiment-section" id="experiments">
+
+            <div class="section-index">
+                <span>FIELD EXPERIMENT 001</span>
+                <span>COORDINATE GEOMETRY</span>
+            </div>
+
+            <div class="experiment-heading">
+                <div>
+                    <p class="small-label">THE FIRST INVESTIGATION</p>
+                    <h2>Where does a point belong?</h2>
+                </div>
+
+                <p class="experiment-description">
+                    Every position on a Cartesian plane can be
+                    described using two numbers. Change the
+                    coordinates and observe the position.
+                </p>
+            </div>
+
+            <div class="experiment-layout">
+
+                <div class="graph-area">
+
+                    <svg id="coordinate-graph"
+                         viewBox="0 0 520 380"
+                         role="img"
+                         aria-label="Interactive Cartesian coordinate plane">
+
+                        <defs>
+                            <pattern id="minor-grid"
+                                     width="20"
+                                     height="20"
+                                     patternUnits="userSpaceOnUse">
+
+                                <path d="M 20 0 L 0 0 0 20"
+                                      fill="none"
+                                      stroke="#D8D4C9"
+                                      stroke-width="1"/>
+                            </pattern>
+                        </defs>
+
+                        <rect width="520"
+                              height="380"
+                              fill="url(#minor-grid)"/>
+
+                        <line x1="20" y1="190"
+                              x2="500" y2="190"
+                              class="graph-axis"/>
+
+                        <line x1="260" y1="15"
+                              x2="260" y2="365"
+                              class="graph-axis"/>
+
+                        <path d="M 500 190 l -8 -4 v 8 z"
+                              class="axis-arrow"/>
+
+                        <path d="M 260 15 l -4 8 h 8 z"
+                              class="axis-arrow"/>
+
+                        <text x="504" y="180" class="axis-label">X</text>
+                        <text x="271" y="17" class="axis-label">Y</text>
+                        <text x="270" y="205" class="axis-label">0</text>
+
+                        <g class="graph-numbers">
+                            <text x="300" y="205">2</text>
+                            <text x="340" y="205">4</text>
+                            <text x="220" y="205">-2</text>
+                            <text x="180" y="205">-4</text>
+                            <text x="270" y="150">2</text>
+                            <text x="270" y="110">4</text>
+                            <text x="270" y="230">-2</text>
+                            <text x="270" y="270">-4</text>
+                        </g>
+
+                        <line id="point-guide-x"
+                              x1="320" y1="150"
+                              x2="320" y2="190"
+                              class="point-guide"/>
+
+                        <line id="point-guide-y"
+                              x1="260" y1="150"
+                              x2="320" y2="150"
+                              class="point-guide"/>
+
+                        <circle id="plotted-point"
+                                cx="320"
+                                cy="150"
+                                r="6"
+                                class="plotted-point"/>
+
+                        <text id="point-label"
+                              x="332"
+                              y="142"
+                              class="point-label">(3, 2)</text>
+
+                    </svg>
+
+                    <div class="graph-caption">
+                        FIG. 001 — THE CARTESIAN COORDINATE PLANE
+                    </div>
+
+                </div>
+
+
+                <div class="experiment-controls">
+
+                    <p class="small-label">CONTROL PANEL / 01</p>
+
+                    <h3>Position the point.</h3>
+
+                    <p class="control-description">
+                        Enter a horizontal and vertical coordinate.
+                    </p>
+
+                    <label for="point-x">HORIZONTAL / X</label>
+                    <input type="number"
+                           id="point-x"
+                           value="3"
+                           min="-10"
+                           max="10">
+
+                    <label for="point-y">VERTICAL / Y</label>
+                    <input type="number"
+                           id="point-y"
+                           value="2"
+                           min="-7"
+                           max="7">
+
+                    <button id="plot-button" class="plot-button" type="button">
+                        Plot coordinates ↗
+                    </button>
+
+                    <div class="result-area">
+                        <span>YOUR RESULT</span>
+                        <p id="plot-result">Point (3, 2)</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LABORATORY INDEX -->
+
+        <section class="laboratories" id="laboratories">
+
+            <div class="section-index">
+                <span>THE COLLECTION</span>
+                <span>02 — LABORATORIES</span>
+            </div>
+
+            <div class="section-title-row">
+                <h2>Choose a subject.</h2>
+                <p>Five areas. Countless things to investigate.</p>
+            </div>
+
+            <div class="lab-list">
+
+                <a href="pages/algebra.html" class="lab-entry">
+                    <span class="lab-id">01</span>
+                    <span class="lab-name">Algebra</span>
+                    <span class="lab-detail">
+                        Expressions, equations and polynomials
+                    </span>
+                    <span class="lab-arrow">↗</span>
+                </a>
+
+                <a href="pages/geometry.html" class="lab-entry">
+                    <span class="lab-id">02</span>
+                    <span class="lab-name">Geometry</span>
+                    <span class="lab-detail">
+                        Shapes, angles and spatial relationships
+                    </span>
+                    <span class="lab-arrow">↗</span>
+                </a>
+
+                <a href="pages/coordinates.html" class="lab-entry">
+                    <span class="lab-id">03</span>
+                    <span class="lab-name">Coordinate Geometry</span>
+                    <span class="lab-detail">
+                        Points, axes and the Cartesian plane
+                    </span>
+                    <span class="lab-arrow">↗</span>
+                </a>
+
+                <a href="pages/statistics.html" class="lab-entry">
+                    <span class="lab-id">04</span>
+                    <span class="lab-name">Statistics</span>
+                    <span class="lab-detail">
+                        Data, averages and distributions
+                    </span>
+                    <span class="lab-arrow">↗</span>
+                </a>
+
+                <a href="pages/probability.html" class="lab-entry">
+                    <span class="lab-id">05</span>
+                    <span class="lab-name">Probability</span>
+                    <span class="lab-detail">
+                        Chance, outcomes and experiments
+                    </span>
+                    <span class="lab-arrow">↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CHALLENGES -->
+
+        <section class="challenge-section" id="challenges">
+
+            <div class="section-index">
+                <span>PROBLEM SOLVING</span>
+                <span>03 — CHALLENGE REGISTER</span>
+            </div>
+
+            <div class="challenge-content">
+                <h2>Put your thinking<br>to the test.</h2>
+
+                <p>
+                    A collection of mathematical problems designed
+                    to test understanding, reasoning and accuracy.
+                </p>
+
+                <a href="pages/challenges.html" class="text-action">
+                    OPEN CHALLENGE REGISTER ↗
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- FORMULA LIBRARY -->
+
+        <section class="formula-section" id="formulas">
+
+            <div class="section-index">
+                <span>REFERENCE MATERIAL</span>
+                <span>04 — FORMULA REGISTER</span>
+            </div>
+
+            <div class="formula-content">
+                <div>
+                    <h2>Know the formula.<br>Understand the idea.</h2>
+
+                    <p>
+                        Explore mathematical formulas, their meanings
+                        and the concepts behind them.
+                    </p>
+                </div>
+
+                <a href="pages/formulas.html" class="text-action">
+                    OPEN FORMULA REGISTER ↗
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-brand">MATHLAB®</div>
+
+        <p>AN OPEN WORKSHOP FOR MATHEMATICAL EXPLORATION.</p>
+
+        <p>MADE BY ARRADHYA SHARMA</p>
+
+        <span>END OF EDITION 002</span>
+
+    </footer>
+
+</body>
+</html>

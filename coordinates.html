@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Investigate ordered pairs, axes, the origin and the four quadrants by plotting points on a Cartesian plane.">
+<title>Coordinate geometry — MathLab</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../pages.css">
+<script src="../script.js" defer></script>
+<script src="../js/coordinates.js" defer></script>
+</head>
+<body>
+<header class="masthead">
+  <a href="../index.html" class="brand">MATHLAB<span>®</span></a>
+  <div class="masthead-caption">AN OPEN WORKSHOP FOR MATHEMATICAL EXPLORATION</div>
+  <button id="theme-toggle" class="theme-toggle" type="button">Dark mode</button>
+</header>
+<nav class="navigation">
+  <span class="nav-label">INDEX /</span>
+  <a href="../index.html#experiments">Experiments</a>
+  <a href="../index.html#laboratories">Laboratories</a>
+  <a href="challenges.html">Challenges</a>
+  <a href="formulas.html">Formula register</a>
+  <span class="edition">EDITION 002 — 2026</span>
+</nav>
+<main class="page-main">
+  <div class="page-topline"><span>LABORATORY 03 / COORDINATE GEOMETRY</span><span>MATHLAB / FIELD NOTES</span></div>
+  <section class="page-intro"><h1>Coordinate geometry</h1><p>Investigate ordered pairs, axes, the origin and the four quadrants by plotting points on a Cartesian plane.</p></section>
+  
+<section class="workspace">
+<h2>Investigation 01 / Plot a point</h2>
+<p>Enter an ordered pair (x, y). The point is plotted on the Cartesian plane and its location is identified.</p>
+<div class="two-column">
+ <div>
+  <svg id="lab-graph" viewBox="0 0 440 340" role="img" aria-label="Coordinate plane with plotted point" style="width:100%;background:var(--paper);border:1px solid var(--line)">
+   <defs><pattern id="lab-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="var(--line)" stroke-width="1"/></pattern></defs>
+   <rect width="440" height="340" fill="url(#lab-grid)"/>
+   <line x1="20" y1="170" x2="420" y2="170" stroke="var(--ink)" stroke-width="1.5"/>
+   <line x1="220" y1="10" x2="220" y2="330" stroke="var(--ink)" stroke-width="1.5"/>
+   <text x="422" y="160" fill="var(--ink)" font-size="12">x</text><text x="230" y="16" fill="var(--ink)" font-size="12">y</text>
+   <line id="lab-guide-x" x1="280" y1="130" x2="280" y2="170" stroke="var(--olive)" stroke-dasharray="4 4"/>
+   <line id="lab-guide-y" x1="220" y1="130" x2="280" y2="130" stroke="var(--olive)" stroke-dasharray="4 4"/>
+   <circle id="lab-point" cx="280" cy="130" r="6" fill="var(--accent)"/>
+   <text id="lab-point-label" x="291" y="121" fill="var(--accent)" font-size="12" font-weight="bold">(3, 2)</text>
+  </svg>
+ </div>
+ <div>
+  <div class="control-row">
+   <div class="field"><label for="coord-x">X COORDINATE</label><input id="coord-x" type="number" value="3" min="-10" max="10"></div>
+   <div class="field"><label for="coord-y">Y COORDINATE</label><input id="coord-y" type="number" value="2" min="-8" max="8"></div>
+   <button class="action-button" id="coord-plot">Plot point ↗</button>
+  </div>
+  <div class="output" id="coord-output" aria-live="polite">Point (3, 2) is in Quadrant I.</div>
+ </div>
+</div>
+<div class="note">The horizontal number is always written first: (x, y). Points on either axis are not inside a quadrant.</div>
+</section>
+<section class="workspace">
+<h2>Investigation 02 / Slope, y-intercept and straight-line graph</h2>
+<p>Enter a straight-line equation such as <strong>y = 2x + 3</strong> or <strong>x = 2y + 3</strong>. MathLab rearranges it into y = mx + c, identifies slope and y-intercept, and plots the line.</p>
+<div class="control-row"><div class="field" style="min-width:220px"><label for="line-equation">LINE EQUATION</label><input id="line-equation" value="y = 2x + 3" autocomplete="off"></div><button class="action-button" id="line-plot">Graph and analyse ↗</button></div>
+<div class="two-column"><svg id="line-graph" viewBox="0 0 440 340" role="img" aria-label="Graph of the entered straight line" style="width:100%;background:var(--paper);border:1px solid var(--line)"><defs><pattern id="line-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="var(--line)" stroke-width="1"/></pattern></defs><rect width="440" height="340" fill="url(#line-grid)"/><line x1="20" y1="170" x2="420" y2="170" stroke="var(--ink)"/><line x1="220" y1="10" x2="220" y2="330" stroke="var(--ink)"/><text x="423" y="160" fill="var(--ink)">x</text><text x="230" y="16" fill="var(--ink)">y</text><line id="function-line" x1="20" y1="170" x2="420" y2="170" stroke="var(--accent)" stroke-width="3"/></svg>
+<div><div class="metric-grid"><div class="metric"><strong id="slope-result">—</strong><span>Slope (m)</span></div><div class="metric"><strong id="intercept-result">—</strong><span>Y-intercept (c)</span></div><div class="metric"><strong id="line-form-result">—</strong><span>Rearranged form</span></div></div><div class="output" id="line-output" aria-live="polite">Enter a line equation to analyse it.</div></div></div>
+<div class="note">For y = mx + c, m is the slope and c is the y-intercept. A vertical line x = k has an undefined slope and no single y-intercept; this tool reports that separately.</div>
+</section>
+
+<section class="workspace">
+<h2>Investigation 03 / Distance and midpoint</h2>
+<p>Compare two points on the coordinate plane. MathLab calculates the straight-line distance and the midpoint between them.</p>
+<div class="control-row">
+ <div class="field"><label for="point-x1">POINT A — X₁</label><input id="point-x1" type="number" value="1" step="any"></div>
+ <div class="field"><label for="point-y1">POINT A — Y₁</label><input id="point-y1" type="number" value="2" step="any"></div>
+ <div class="field"><label for="point-x2">POINT B — X₂</label><input id="point-x2" type="number" value="4" step="any"></div>
+ <div class="field"><label for="point-y2">POINT B — Y₂</label><input id="point-y2" type="number" value="6" step="any"></div>
+ <button class="action-button" id="measure-points">Calculate ↗</button>
+</div>
+<div class="metric-grid"><div class="metric"><strong id="distance-result">—</strong><span>Distance AB</span></div><div class="metric"><strong id="midpoint-result">—</strong><span>Midpoint M</span></div></div>
+<div class="output" id="measure-output" aria-live="polite">Distance and midpoint steps will appear here.</div>
+<div class="note">Distance = √[(x₂ − x₁)² + (y₂ − y₁)²]. Midpoint = ((x₁ + x₂)/2, (y₁ + y₂)/2).</div>
+</section>
+<section class="workspace">
+<h2>Investigation 04 / Shape builder</h2>
+<p>Enter three or more ordered vertices. Join the points in the order entered to create a polygon, then calculate its side lengths, perimeter and area.</p>
+<div class="field"><label for="shape-points">VERTICES — FORMAT x,y; x,y; x,y</label><textarea id="shape-points" rows="3" style="width:100%">0,0; 4,0; 4,3; 0,3</textarea></div>
+<div class="control-row"><button class="action-button" id="build-shape">Build shape ↗</button><button class="action-button secondary-button" id="clear-shape" type="button">Clear points</button></div>
+<div class="two-column"><svg id="polygon-graph" viewBox="0 0 440 340" role="img" aria-label="Polygon made from entered coordinates" style="width:100%;background:var(--paper);border:1px solid var(--line)"><defs><pattern id="polygon-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="var(--line)" stroke-width="1"/></pattern></defs><rect width="440" height="340" fill="url(#polygon-grid)"/><line x1="20" y1="170" x2="420" y2="170" stroke="var(--ink)"/><line x1="220" y1="10" x2="220" y2="330" stroke="var(--ink)"/><g id="polygon-drawing"></g></svg><div><div class="metric-grid"><div class="metric"><strong id="polygon-type">—</strong><span>Detected shape</span></div><div class="metric"><strong id="polygon-area">—</strong><span>Area</span></div><div class="metric"><strong id="polygon-perimeter">—</strong><span>Perimeter</span></div></div><div class="output" id="polygon-output" aria-live="polite">Your shape analysis will appear here.</div></div></div>
+<div class="note">Vertices must be entered around the boundary in order, without crossing edges. The shape label is assigned only when its side lengths and angles meet the relevant geometric tests; otherwise it is labelled as a polygon.</div>
+</section>
+<section class="workspace">
+<h2>Investigation 05 / Experimental and theoretical probability</h2>
+<p><strong>Experimental probability</strong> is based on what happens in trials. <strong>Theoretical probability</strong> is calculated from equally likely outcomes before an experiment.</p>
+<div class="formula-expression">P(E) = favourable outcomes ÷ total equally likely outcomes</div>
+<p>After a simulation, compare the observed fraction with the theoretical fraction. They may differ in a small experiment; more trials often give a more stable estimate, but do not guarantee an exact match.</p>
+</section>
+<section class="workspace">
+<h2>Investigation 06 / Playing-card experiment</h2>
+<p>Simulate drawing from a standard 52-card deck. Choose an event and run repeated draws. This activity uses <strong>replacement</strong>: after each draw, the card is returned and the deck is shuffled again, so each trial starts with 52 cards.</p>
+<div class="control-row"><div class="field"><label for="card-event">EVENT</label><select id="card-event"><option value="king">Draw a King (4 cards)</option><option value="queen">Draw a Queen (4 cards)</option><option value="ace">Draw an Ace (4 cards)</option><option value="heart">Draw a Heart (13 cards)</option><option value="spade">Draw a Spade (13 cards)</option><option value="red">Draw a Red card (26 cards)</option><option value="black">Draw a Black card (26 cards)</option><option value="face">Draw a face card (12 cards)</option><option value="number">Draw a number card 2–10 (36 cards)</option></select></div>
+<div class="field"><label for="card-trials">NUMBER OF DRAWS</label><select id="card-trials"><option>50</option><option selected>100</option><option>500</option><option>1000</option><option>5000</option></select></div><button class="action-button" id="run-cards">Run card experiment ↗</button></div>
+<div class="metric-grid"><div class="metric"><strong id="card-success">—</strong><span>Favourable draws</span></div><div class="metric"><strong id="card-experimental">—</strong><span>Experimental probability</span></div><div class="metric"><strong id="card-theoretical">—</strong><span>Theoretical probability</span></div></div>
+<div class="output" id="card-output" aria-live="polite">Choose an event and run the experiment.</div>
+<div class="note">A standard deck has 52 cards: 4 suits (hearts, diamonds, clubs and spades), 13 ranks in each suit. Hearts and diamonds are red; clubs and spades are black. Face cards are J, Q and K.</div>
+</section>
+  <a class="back-link" href="../index.html#laboratories">← BACK TO THE LABORATORY INDEX</a>
+</main>
+<footer class="page-footer"><strong>MATHLAB®</strong><span>MADE BY ARRADHYA SHARMA</span><span>END OF EDITION 002</span></footer>
+</body>
+</html>

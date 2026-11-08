@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Run simple chance experiments and compare experimental probability with theoretical probability.">
+<title>Probability laboratory — MathLab</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../pages.css">
+<script src="../script.js" defer></script>
+<script src="../js/probability.js" defer></script>
+</head>
+<body>
+<header class="masthead">
+  <a href="../index.html" class="brand">MATHLAB<span>®</span></a>
+  <div class="masthead-caption">AN OPEN WORKSHOP FOR MATHEMATICAL EXPLORATION</div>
+  <button id="theme-toggle" class="theme-toggle" type="button">Dark mode</button>
+</header>
+<nav class="navigation">
+  <span class="nav-label">INDEX /</span>
+  <a href="../index.html#experiments">Experiments</a>
+  <a href="../index.html#laboratories">Laboratories</a>
+  <a href="challenges.html">Challenges</a>
+  <a href="formulas.html">Formula register</a>
+  <span class="edition">EDITION 002 — 2026</span>
+</nav>
+<main class="page-main">
+  <div class="page-topline"><span>LABORATORY 05 / PROBABILITY</span><span>MATHLAB / FIELD NOTES</span></div>
+  <section class="page-intro"><h1>Probability laboratory</h1><p>Run simple chance experiments and compare experimental probability with theoretical probability.</p></section>
+  
+<section class="workspace">
+<h2>Investigation 01 / Flip a coin</h2>
+<p>Run a simulation and compare the experimental results with the theoretical probability of one-half for a fair coin.</p>
+<div class="control-row">
+ <div class="field"><label for="coin-trials">NUMBER OF FLIPS</label><select id="coin-trials"><option>10</option><option>50</option><option selected>100</option><option>500</option><option>1000</option><option>5000</option></select></div>
+ <button class="action-button" id="flip-coin">Run coin experiment ↗</button>
+</div>
+<div class="metric-grid">
+ <div class="metric"><strong id="heads-count">—</strong><span>Heads</span></div>
+ <div class="metric"><strong id="tails-count">—</strong><span>Tails</span></div>
+ <div class="metric"><strong id="heads-probability">—</strong><span>Experimental P(heads)</span></div>
+</div>
+<div class="output" id="coin-output" aria-live="polite">Run the experiment to see the results.</div>
+</section>
+<section class="workspace">
+<h2>Investigation 02 / Roll a die</h2>
+<p>Simulate repeated rolls of a fair six-sided die. Every face has theoretical probability 1/6 on each roll.</p>
+<div class="control-row">
+ <div class="field"><label for="die-trials">NUMBER OF ROLLS</label><select id="die-trials"><option>12</option><option selected>60</option><option>120</option><option>600</option><option>1000</option><option>5000</option></select></div>
+ <button class="action-button" id="roll-die">Roll the die ↗</button>
+</div>
+<div class="data-list" id="die-results"></div>
+<div class="output" id="die-output" aria-live="polite">Run the experiment to see the results.</div>
+<div class="note">Simulations are random. Results will vary each time, especially when the number of trials is small. More trials often bring experimental probability closer to theoretical probability, but not in a guaranteed straight line.</div>
+</section>
+  <a class="back-link" href="../index.html#laboratories">← BACK TO THE LABORATORY INDEX</a>
+</main>
+<footer class="page-footer"><strong>MATHLAB®</strong><span>MADE BY ARRADHYA SHARMA</span><span>END OF EDITION 002</span></footer>
+</body>
+</html>
